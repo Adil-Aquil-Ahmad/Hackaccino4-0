@@ -1,0 +1,139 @@
+.forms-landing {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #7e22ce 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.forms-container {
+  max-width: 1200px;
+  width: 100%;
+  text-align: center;
+}
+
+.forms-header {
+  margin-bottom: 60px;
+}
+
+.forms-header h1 {
+  font-size: 4rem;
+  color: white;
+  font-weight: 900;
+  margin-bottom: 10px;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  letter-spacing: 2px;
+}
+
+.forms-header p {
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 300;
+}
+
+.forms-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.form-card {
+  background: white;
+  border-radius: 20px;
+  padding: 50px 30px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.form-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.form-card:hover::before {
+  transform: scaleX(1);
+}
+
+.form-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.sponsor-card .card-icon {
+  color: #667eea;
+}
+
+.community-card .card-icon {
+  color: #8B4513;
+}
+
+.judge-card .card-icon {
+  color: #f59e0b;
+}
+
+.card-icon {
+  margin-bottom: 20px;
+}
+
+.card-icon svg {
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.1));
+}
+
+.form-card h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #2d3748;
+  font-weight: 700;
+}
+
+.form-card p {
+  font-size: 1rem;
+  color: #718096;
+  line-height: 1.6;
+}
+
+.forms-footer {
+  margin-top: 40px;
+}
+
+.forms-footer p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .forms-header h1 {
+    font-size: 2.5rem;
+  }
+
+  .forms-header p {
+    font-size: 1.2rem;
+  }
+
+  .forms-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .form-card {
+    padding: 40px 20px;
+  }
+
+  .form-card h2 {
+    font-size: 1.5rem;
+  }
+}

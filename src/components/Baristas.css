@@ -1,0 +1,113 @@
+.baristas {
+  background: linear-gradient(180deg, #0a0a0a 0%, #1a0a0f 100%);
+}
+
+.baristas-subtitle {
+  text-align: center;
+  color: #999999;
+  margin-bottom: 60px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.baristas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.barista-card {
+  background: rgba(139, 69, 19, 0.05);
+  border: 2px solid rgba(139, 69, 19, 0.2);
+  border-radius: 20px;
+  padding: 40px 30px;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.barista-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(139, 69, 19, 0.1) 0%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.barista-card:hover::before {
+  opacity: 1;
+}
+
+.barista-card:hover {
+  transform: translateY(-10px);
+  border-color: #8B4513;
+  box-shadow: 0 20px 40px rgba(139, 69, 19, 0.3);
+  background: rgba(139, 69, 19, 0.1);
+}
+
+.barista-image {
+  font-size: 5rem;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.barista-card:hover .barista-image {
+  transform: scale(1.1);
+}
+
+.barista-name {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  color: #D2691E;
+  font-weight: 700;
+}
+
+.barista-role {
+  color: #999999;
+  margin-bottom: 20px;
+  font-size: 0.95rem;
+}
+
+.barista-socials {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.social-link {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(139, 69, 19, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  color: #D2691E;
+}
+
+.social-link:hover {
+  background: #8B4513;
+  color: white;
+  transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+  .baristas-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 25px;
+  }
+  
+  .barista-card {
+    padding: 30px 20px;
+  }
+}

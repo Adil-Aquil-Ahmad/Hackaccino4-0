@@ -1,0 +1,126 @@
+.about {
+  background: linear-gradient(180deg, #1a0a0f 0%, #0a0a0a 100%);
+}
+
+.about-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.about-text {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.about-text p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #cccccc;
+  margin-bottom: 20px;
+}
+
+.about-text strong {
+  color: #D2691E;
+  font-weight: 700;
+}
+
+.collaborate-section {
+  background: rgba(139, 69, 19, 0.05);
+  border: 2px solid rgba(139, 69, 19, 0.2);
+  border-radius: 20px;
+  padding: 40px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.collaborate-section h3 {
+  font-size: 2rem;
+  color: #D2691E;
+  margin-bottom: 20px;
+}
+
+.collaborate-section p {
+  color: #cccccc;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.collaborate-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 15px 35px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #8B4513, #A0522D);
+  color: white;
+  border: 2px solid transparent;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(139, 69, 19, 0.4);
+  background: linear-gradient(135deg, #A0522D, #8B4513);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #D2691E;
+  border: 2px solid #8B4513;
+}
+
+.btn-secondary:hover {
+  background: rgba(139, 69, 19, 0.1);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(139, 69, 19, 0.2);
+}
+
+.location-section {
+  text-align: center;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 15px;
+}
+
+.location-section h3 {
+  font-size: 1.8rem;
+  color: #D2691E;
+  margin-bottom: 20px;
+}
+
+.location-info p {
+  color: #cccccc;
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+.location-info strong {
+  color: #D2691E;
+  font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+  .collaborate-section {
+    padding: 30px 20px;
+  }
+  
+  .collaborate-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .btn {
+    width: 100%;
+  }
+}

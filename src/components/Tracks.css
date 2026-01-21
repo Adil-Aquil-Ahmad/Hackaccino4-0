@@ -1,0 +1,101 @@
+.tracks {
+  background: linear-gradient(180deg, #0a0a0a 0%, #1a0a0f 100%);
+}
+
+.tracks-subtitle {
+  text-align: center;
+  color: #999999;
+  margin-bottom: 60px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.tracks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.track-card {
+  background: rgba(139, 69, 19, 0.05);
+  border: 2px solid rgba(139, 69, 19, 0.2);
+  border-radius: 20px;
+  padding: 40px 30px;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.track-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(139, 69, 19, 0.1) 0%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.track-card:hover::before {
+  opacity: 1;
+}
+
+.track-card:hover {
+  transform: translateY(-10px);
+  border-color: #8B4513;
+  box-shadow: 0 20px 40px rgba(139, 69, 19, 0.3);
+  background: rgba(139, 69, 19, 0.1);
+}
+
+.track-icon {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  filter: grayscale(20%);
+  transition: all 0.3s ease;
+}
+
+.track-card:hover .track-icon {
+  transform: scale(1.2) rotate(5deg);
+  filter: grayscale(0%);
+}
+
+.track-card h3 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #D2691E;
+  font-weight: 700;
+}
+
+.track-card p {
+  color: #cccccc;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .tracks-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  
+  .track-card {
+    padding: 35px 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .track-icon {
+    font-size: 3rem;
+  }
+  
+  .track-card h3 {
+    font-size: 1.5rem;
+  }
+}

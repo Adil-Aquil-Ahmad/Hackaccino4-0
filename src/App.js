@@ -1,24 +1,32 @@
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import './App.css';
+import LoadingScreen from './components/LoadingScreen';
+import FormsLanding from './components/FormsLanding';
+import CommunityPartnerPage from './pages/CommunityPartnerPage';
+import SponsorPage from './pages/SponsorPage';
+import JudgePage from './pages/JudgePage';
 
-function App() {
+function AppContent() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Routes>
+        <Route path="/" element={<FormsLanding />} />
+        <Route path="/community-partner" element={<CommunityPartnerPage />} />
+        <Route path="/sponsor" element={<SponsorPage />} />
+        <Route path="/judge" element={<JudgePage />} />
+      </Routes>
     </div>
+  );
+}
+
+function App() {
+  const [loading, setLoading] = useState(false);
+
+  return (
+    <Router>
+      <AppContent />
+    </Router>
   );
 }
 

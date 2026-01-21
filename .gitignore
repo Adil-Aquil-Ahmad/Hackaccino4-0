@@ -13,6 +13,7 @@
 
 # misc
 .DS_Store
+.env
 .env.local
 .env.development.local
 .env.test.local
@@ -21,3 +22,36 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+Thumbs.db
+
+# Unused Pages (Not needed for forms.hackaccino.in)
+src/pages/Home.js
+src/pages/BaristasPage.js
+src/pages/SponsorsPage.js
+src/pages/FAQPage.js
+
+# Unused Components (Not needed for forms portal)
+src/components/Header.js
+src/components/Footer.js
+src/components/Hero.js
+src/components/Tracks.js
+src/components/Timeline.js
+src/components/About.js
+src/components/Baristas.js
+src/components/Sponsors.js
+src/components/FAQ.js
+src/components/LoadingScreen.js
+
+# Only keeping:
+# - FormsLanding, CommunityPartnerForm, SponsorForm, JudgeForm
+# - CommunityPartnerPage, SponsorPage, JudgePage
+# - App.js, google-apps-script.js
