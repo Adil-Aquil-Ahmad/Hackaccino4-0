@@ -13,6 +13,7 @@ const BackgroundVideo = () => {
     const setupHLS = (video, src) => {
       if (video.canPlayType("application/vnd.apple.mpegurl")) {
         video.src = src;
+        video.load();
       } else if (Hls.isSupported()) {
         const hls = new Hls({
           lowLatencyMode: true,
@@ -20,6 +21,9 @@ const BackgroundVideo = () => {
         });
         hls.loadSource(src);
         hls.attachMedia(video);
+        hls.on(Hls.Events.MANIFEST_PARSED, () => {
+          video.load();
+        });
       }
     };
 
@@ -37,7 +41,7 @@ const BackgroundVideo = () => {
       }
     };
 
-    forward.addEventListener('canplay', () => {
+    forward.addEventListener('loadeddata', () => {
       playVideo(forward);
     }, { once: true });
 
@@ -87,12 +91,16 @@ const BackgroundVideo = () => {
         className={`background-video ${!isReverse ? "visible" : ""}`}
         muted
         playsInline
+        preload="auto"
+        webkit-playsinline="true"
       />
       <video
         ref={reverseRef}
         className={`background-video ${isReverse ? "visible" : ""}`}
         muted
         playsInline
+        preload="auto"
+        webkit-playsinline="true"
       />
       <div className="video-overlay"></div>
     </div>
