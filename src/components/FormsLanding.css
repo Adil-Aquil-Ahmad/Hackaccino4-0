@@ -1,3 +1,63 @@
+/* --- Flex column for bottom section to pin socials/footer --- */
+.section-bottom-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  min-height: 100vh;
+  width: 100vw;
+}
+
+.section-bottom-flex .content-wrapper {
+  flex: 0 0 auto;
+}
+
+.bottom-bar {
+  margin-top: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  padding-bottom: 24px;
+  position: relative;
+  z-index: 20;
+  background: none;
+}
+
+.bottom-bar .socials-section {
+  margin-top: 0;
+  margin-bottom: 24px;
+}
+
+.bottom-bar .forms-footer {
+  margin-top: 0;
+}
+
+@media (max-width: 768px) {
+  .section-bottom-flex {
+    min-height: 100vh;
+  }
+  .bottom-bar {
+    padding-bottom: 10px;
+  }
+}
+/* --- Page Sectioning for 2x Viewport Height --- */
+.page-sections {
+  display: flex;
+  flex-direction: column;
+  min-height: 200vh;
+  width: 100vw;
+}
+
+.section {
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+}
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&display=swap');
@@ -86,7 +146,7 @@ body {
   width: 100%;
   position: relative;
   z-index: 2;
-  min-height: 100vh;
+  flex: 1 1 100vh;
   display: flex;
   flex-direction: column;
 }
@@ -129,18 +189,22 @@ body {
 }
 
 .forms-grid {
-  min-height: 100vh;
+  flex: 1 1 0;
+  min-height: 0;
   display: flex;
+  flex-wrap: wrap;
   align-items: flex-start;
   justify-content: center;
-  padding: 80px 60px 40px 60px;
+  padding: 80px 30px 40px 30px;
   gap: 40px;
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
+  box-sizing: border-box;
 }
 
 .content-wrapper {
-  flex: 1 1 auto;
+  flex: 1 1 0;
+  min-height: 0;
   display: flex;
   gap: 60px;
   padding: 60px;
@@ -150,6 +214,25 @@ body {
   max-width: 1600px;
   margin: 0 auto;
   box-sizing: border-box;
+@media (max-width: 1200px) {
+  .page-sections, .section {
+    min-height: unset;
+    width: 100vw;
+  }
+  .section {
+    min-height: 100vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-sections, .section {
+    min-height: unset;
+    width: 100vw;
+  }
+  .section {
+    min-height: 100vh;
+  }
+}
 }
 
 .Image-grid {
@@ -278,8 +361,37 @@ body {
   transform-style: preserve-3d;
   transform: translateZ(0) scale(1);
   z-index: 1;
-  width: 400px;
-  height: 400px;
+  width: 100%;
+  max-width: 350px;
+  height: 350px;
+  @media (max-width: 1200px) {
+    .forms-grid {
+      gap: 24px;
+      max-width: 100vw;
+      padding: 40px 10px 20px 10px;
+    }
+    .form-card {
+      max-width: 300px;
+      height: 300px;
+      padding: 36px 16px 36px 16px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .forms-grid {
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      padding: 20px 5px 10px 5px;
+    }
+    .form-card {
+      width: 92vw;
+      max-width: 98vw;
+      height: auto;
+      min-height: 180px;
+      padding: 18px 8px 18px 8px;
+    }
+  }
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -431,7 +543,7 @@ body {
   margin-bottom: 0;
   display: flex;
   justify-content: center;
-  gap: 40px;
+  gap: 18px;
   flex-wrap: wrap;
 }
 
